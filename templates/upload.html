@@ -33,7 +33,7 @@
                 if (response != 0) {
 
                     // const responseResult = JSON.stringify(response[1]);
-                    const name = response[1];
+                    const name = response.split('"').pop().split('"')[0];;
                     const result = response[2];
                     var anchorEl = document.createElement('a');
 
