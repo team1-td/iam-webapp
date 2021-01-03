@@ -65,7 +65,10 @@ def upload():
     if not os.path.isdir(user_images_path):
         os.mkdir(user_images_path)
 
-    result = {}
+    result = {
+        "image_name": "",
+        "image_ia": ""
+    }
 
     for key, f in request.files.items():
         if key.startswith('file'):
