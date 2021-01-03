@@ -27,24 +27,26 @@
             acceptedFiles: ".jpeg,.jpg,.png,.gif",
 
             success: function(file, response) {
-                console.log("result 1:", response);
+                console.log("result 1A:", response);
+                console.log("result 1B:", response[1]);
+                console.log("result 1C:", response[2]);
                 if (response != 0) {
 
-                    const responseResult = JSON.stringify(response);
-                    const name = responseResult[1];
-                    const result = responseResult[2];
+                    // const responseResult = JSON.stringify(response[1]);
+                    const name = response[1];
+                    const result = response[2];
                     var anchorEl = document.createElement('a');
 
-                    anchorEl.setAttribute('href', responseResult[1]);
+                    anchorEl.setAttribute('href', name);
 
                     anchorEl.setAttribute('target', '_blank');
 
                     anchorEl.innerHTML = "<br>Test";
 
                     file.previewTemplate.appendChild(anchorEl);
-                    console.log("result 2", responseResult[1]);
-                    console.log("result 3", responseResult[2]);
-                    console.log("result 4", responseResult);
+                    console.log("result 2", name);
+                    console.log("result 3", result);
+                    // console.log("result 4", responseResult);
                 }
 
             }
