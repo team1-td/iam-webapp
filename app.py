@@ -66,7 +66,8 @@ def upload():
         os.mkdir(user_images_path)
 
     result = {
-        "image_result": "";
+        "image_name": "",
+        "image_ia": ""
     }
 
     for key, f in request.files.items():
@@ -80,7 +81,7 @@ def upload():
         if image.is_image_format_valid():
             # image processing
             image.classify_image()
-            result["image_result"] = image.classification
+            result["image_ia"] = image.classification
         else:
             # invalid format
             result[image_name] = 'INVALID FORMAT'
