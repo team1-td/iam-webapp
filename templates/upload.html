@@ -31,8 +31,8 @@
                 if (response != 0) {
 
                     const responseResult = JSON.stringify(response);
-                    const name = responseResult.split('').pop().split(':')[0];;
-                    const result = response[property];
+                    // const name = responseResult.split('').pop().split(':')[0];;
+                    // const result = response[property];
                     var anchorEl = document.createElement('a');
 
                     anchorEl.setAttribute('href', name);
@@ -42,8 +42,8 @@
                     anchorEl.innerHTML = "<br>Test";
 
                     file.previewTemplate.appendChild(anchorEl);
-                    console.log("result 2", name);
-                    console.log("result 3", result);
+                    // console.log("result 2", name);
+                    // console.log("result 3", result);
                     console.log("result 4", responseResult);
                 }
 
