@@ -30,9 +30,9 @@
                 console.log("result 1:", response);
                 if (response != 0) {
 
-                    const responseResult = response;
-                    const name = result.image_result
-                    const result = result.split(':').pop().split('"')[0];;
+                    // const responseResult = response;
+                    const result = result.image_ia
+                        // const result = result.split(':').pop().split('"')[0];;
                     var anchorEl = document.createElement('a');
 
                     anchorEl.setAttribute('href', name);
@@ -42,9 +42,9 @@
                     anchorEl.innerHTML = "<br>Test " + result;
 
                     file.previewTemplate.appendChild(anchorEl);
-                    console.log("result 2", name);
+                    // console.log("result 2", name);
                     console.log("result 3", result);
-                    console.log("result 4", responseResult);
+                    // console.log("result 4", responseResult);
                 }
 
             }
