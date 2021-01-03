@@ -76,12 +76,14 @@ def upload():
 
         my_image_path = os.path.join(app.config['UPLOADED_PATH'], f.filename)
         image_name = f.filename
+        result["image_name"] = f.filename
 
         image = Image(my_image_path)
         if image.is_image_format_valid():
             # image processing
             image.classify_image()
             result[image_name] = image.classification
+            result["image_ia"] = image.classification
         else:
             # invalid format
             result[image_name] = 'INVALID FORMAT'
