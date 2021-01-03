@@ -13,10 +13,10 @@
 
     <br>
     <h3>Response is: </h3>
-    {{ dropzone.config(custom_options="success: function(file, response)
-    <p>{{response}}</p>{console.log(response);}") }}
+    <!-- {{ dropzone.config(custom_options="success: function(file, response){console.log(response);}") }} -->
     <br> {{response}} <br> {{content}}
 
+    <script src="{{ url_for('static', filename='assets/JS/upload.js') }}"></script>
 </body>
 
 </html>
