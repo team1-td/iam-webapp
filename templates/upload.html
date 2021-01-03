@@ -8,18 +8,46 @@
 </head>
 
 <body>
-    <form action="{{ url_for('upload_file') }}" enctype="multipart/form-data" method="post">
-        <label for="img">Select image:</label>
-        <input type="file" name="files[]" multiple="true" accept="image/*"> {{ dropzone.create() }}
-        <input type="submit" id="submit" value="Submit and Upload">
-    </form>
-    {{ dropzone.load_js() }} {{ dropzone.config() }}
+    {{ dropzone.create(action='upload') }}
+    <button id="upload">Upload</button> {{ dropzone.load_js() }} {{ dropzone.config() }}
 
     <br>
     <h3>Response is: </h3>
-    <!-- {{ dropzone.config(custom_options="success: function(file, response){console.log(response);}") }} -->
-    <br>
-    <h2> {{value}} </h2> <br> {{content}}
+    <!-- {{ dropzone.config(custom_options="success: function(file, response){console.log(response);}") }}
+    <br> {{response}} <br> {{content}} -->
+    <script type="text/javascript">
+        Dropzone.autoDiscover = false;
+
+
+
+        var myDropzone = new Dropzone(".dropzone", {
+
+            maxFilesize: 10,
+
+            acceptedFiles: ".jpeg,.jpg,.png,.gif",
+
+            success: function(file, response) {
+
+                if (response != 0) {
+
+                    var anchorEl = document.createElement('a');
+
+                    anchorEl.setAttribute('href', response);
+
+                    anchorEl.setAttribute('target', '_blank');
+
+                    anchorEl.innerHTML = "<br>Download File";
+
+                    file.previewTemplate.appendChild(anchorEl);
+
+                }
+
+            }
+
+        });
+    </script>
+
+
 </body>
 
 </html>
