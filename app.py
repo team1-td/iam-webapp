@@ -58,7 +58,7 @@ def logout():
     return redirect(url_for('index'))
 
 
-@app.route('/upload', methods=['post'])
+@app.route('/upload', methods=['POST', 'GET'])
 def upload():
     user_images_path = os.path.join(app_root, 'user_images')
 
@@ -89,8 +89,10 @@ def upload():
     # return content, status_code, headers
     if request.method == 'POST':
        query = request.form['query']
+       content, status_code = jsonify(result), 200
+       headers = {'Access-Control-Allow-Origin': '*'}
        response = MyService.retrieve_response(query)
-    return render_template("upload.html", value=response)
+    return render_template("upload.html", value=response, content, status_code, headers)
 
 
 if __name__ == '__main__':
