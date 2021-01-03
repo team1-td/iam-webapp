@@ -67,7 +67,7 @@ def upload():
 
     result = {
         fileName: "",
-        result: "",
+        resultIA: ""
     }
 
     for key, f in request.files.items():
@@ -75,16 +75,16 @@ def upload():
             f.save(os.path.join(app.config['UPLOADED_PATH'], f.filename))
 
         my_image_path = os.path.join(app.config['UPLOADED_PATH'], f.filename)
-        result[1] = f.filename
+        result.fileName = f.filename
 
         image = Image(my_image_path)
         if image.is_image_format_valid():
             # image processing
             image.classify_image()
-            result[2] = image.classification
+            result.resultIA = image.classification
         else:
             # invalid format
-            result[1] = 'INVALID FORMAT'
+            result.fileName = 'INVALID FORMAT'
 
     # RESPONSE
     content, status_code = jsonify(result), 200
