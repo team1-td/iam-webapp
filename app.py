@@ -58,7 +58,7 @@ def logout():
     return redirect(url_for('index'))
 
 
-@app.route('/upload', methods=['POST', 'GET'])
+@app.route('/upload', methods=['POST'])
 def upload():
     user_images_path = os.path.join(app_root, 'user_images')
 
