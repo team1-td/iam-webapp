@@ -75,7 +75,7 @@ def upload():
             f.save(os.path.join(app.config['UPLOADED_PATH'], f.filename))
 
         my_image_path = os.path.join(app.config['UPLOADED_PATH'], f.filename)
-        image_name = f.filename
+        result["image_name"] = f.filename
 
         image = Image(my_image_path)
         if image.is_image_format_valid():
@@ -84,7 +84,7 @@ def upload():
             result["image_ia"] = image.classification
         else:
             # invalid format
-            result[image_name] = 'INVALID FORMAT'
+            result["image_name"] = 'INVALID FORMAT'
 
     # RESPONSE
     content, status_code = jsonify(result), 200
