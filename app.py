@@ -58,10 +58,11 @@ def logout():
     return redirect(url_for('index'))
 
 
-@app.route('/upload', methods=['POST'])
+@app.route('/upload', methods=['GET', 'POST']))
 def upload():
     user_images_path = os.path.join(app_root, 'user_images')
 
+    if request.method == 'POST':
     if not os.path.isdir(user_images_path):
         os.mkdir(user_images_path)
 
@@ -84,16 +85,10 @@ def upload():
             result[image_name] = 'INVALID FORMAT'
 
     # RESPONSE
-    # content, status_code = jsonify(result), 200
-    # headers = {'Access-Control-Allow-Origin': '*'}
+    content, status_code = jsonify(result), 200
+    headers = {'Access-Control-Allow-Origin': '*'}
     # return content, status_code, headers
-    if request.method == 'post':
-       query = request.form['query']
-       response = MyService.retrieve_response(query)
-       content, status_code = jsonify(result), 200
-       headers = {'Access-Control-Allow-Origin': '*'}
-    return render_template("upload.html", content, status_code, headers, value=response)
-
+return 'upload template'(content, status_code, headers)
 
 if __name__ == '__main__':
     app.run(debug=True)
