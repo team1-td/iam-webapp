@@ -4,12 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Team 1: Abdu Mohammed Nur; Bernabei Diana; Boanini Sara; di Fede Stefan; Improda Marco; Muzzi Lorenzo; Spagnolini Alessio; Vitelli Nicolò">
+    <meta name="copyright" content="Team 1">
+    <meta name="description" content="Upload up to 10 image per time and get a basic description for each one.">
+    <meta name="keywords" content="I am, image, upload, recognition, jpeg, png">
+    <meta property="og:type" content="Landing Page">
+    <meta property="og:title" content="IAm-webapp">
+    <meta property="og:site_name" content="image recognizer">
+    <meta property="og:description" content="A webapp where you can upload up to 10 image per time and get a basic description for each one.">
+    <meta property="og:locale" content="English">
+    <meta property="og:url" content="https://peaceful-anchorage-04331.herokuapp.com/">
+    <link rel="icon" href="{{ url_for('static', filename='assets/css/style.css') }}" type="image/icon type">
     <!--CARICAMENTO GOOGLE FONTS POPPINS E PERMANENTMARKER-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-    <link href="{{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet">
+    <link href="/static/assets/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <title>Iam</title>
 </head>
@@ -24,18 +36,17 @@
         <p class="appname"> I AM </p>
     </div>
     <!--FORM DI INSERIMENTO USERNAME E PASSWORD-->
-    <div container class="data_insert">
+    <div class="data_insert">
         <form action="{{ url_for('home') }}" method="POST">
             <label for="username">Username</label><br>
-            <input type="email" id="username" name="email" class="inputfield_style"><br><br>
+            <input type="text" id="username" name="username" class="inputfield_style"><br><br>
             <label for="password">Password</label><br>
             <input type="password" id="password" name="password" class="inputfield_style">
             <i class="far fa-eye" id="togglePassword"></i>
-            <input type="submit" alt="button to go on load page" value="LOGIN" lass="btn">
-        </form>
-        <!-- <a href="./load.html" ><button c></button></a> -->
+            <br>
+            </form>
+        <input type="submit" class="btn" alt="button to go on load page" value="LOGIN" lass="btn">
     </div>
-    <!---->
     <script src="{{ url_for('static', filename='assets/JS/app.js') }}"></script>
 
     <!--BOTTONI PER LA SECONDA PAGINA

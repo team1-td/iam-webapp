@@ -3,18 +3,49 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Flask-Dropzone Demo: Click Upload</title>
-    {{ dropzone.load_css() }} {{ dropzone.style('border: 2px dashed #0087F7; margin: 10px 0 10px; min-height: 400px;') }}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--CARICAMENTO GOOGLE FONTS POPPINS E PERMANENTMARKER-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+    <title>Iam - Upload</title>
+    {{ dropzone.load_css() }} {{ dropzone.style('border: 2px dashed #66E26F; margin: 10px 0 10px; min-height: 400px;') }}
+    <link href="{{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet">
+    <style type="text/css">
+        .dropzone {
+            background: #434956;
+            border-radius: 30px;
+            margin: 30px!important;
+        }
+        
+        @media screen and (max-width: 600px) {
+            .dropzone.dz-clickable .dz-message,
+            .dropzone.dz-clickable .dz-message * {
+                font-size: 1.3em;
+            }
+            .app_name {
+                font-size: 30px;
+            }
+            .btn {
+                font-size: 1.5em;
+                text-align: center;
+                height: 50px;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <div class="app_name">
+        <p class="appname"> I AM </p>
+    </div>
     {{ dropzone.create(action='upload') }}
-    <button id="upload">Upload</button> {{ dropzone.load_js() }} {{ dropzone.config() }}
+    <button id="upload" class="btn">Upload</button> {{ dropzone.load_js() }} {{ dropzone.config() }}
 
-    <br>
-    <h3>Response is: </h3>
-    <!-- {{ dropzone.config(custom_options="success: function(file, response){console.log(response);}") }}
-    <br> {{response}} <br> {{content}} -->
     <script type="text/javascript">
         Dropzone.autoDiscover = false;
 
@@ -24,7 +55,7 @@
 
             maxFilesize: 10,
 
-            acceptedFiles: ".jpeg,.jpg,.png,.gif",
+            acceptedFiles: ".jpeg,.jpg,.png",
 
             success: function(file, response) {
                 console.log("result 1:", response);
@@ -32,13 +63,7 @@
 
                     const responseResult = response;
                     const result = response.image_ia
-                        // const result = result.split(':').pop().split('"')[0];;
-                    var resultEl = document.createElement('h3');
-
-                    // anchorEl.setAttribute('href', name);
-
-                    // anchorEl.setAttribute('target', '_blank');
-
+                    let resultEl = document.createElement('h3');
                     resultEl.innerHTML = "<br> " + result;
 
                     file.previewTemplate.appendChild(resultEl);
@@ -51,8 +76,6 @@
 
         });
     </script>
-
-
 </body>
 
 </html>
