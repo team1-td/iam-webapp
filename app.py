@@ -87,6 +87,9 @@ def upload():
     # content, status_code = jsonify(result), 200
     # headers = {'Access-Control-Allow-Origin': '*'}
     # return content, status_code, headers
+    if request.method == 'POST':
+       query = request.form['query']
+       response = MyService.retrieve_response(query)
     return render_template("upload.html", value=result)
 
 
