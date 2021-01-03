@@ -13,7 +13,8 @@
 
     <br>
     <h3>Response is: </h3>
-    <br> {{value}} <br> {{content}} {{ dropzone.config(custom_options="success: function(file, response){console.log(response);}") }}
+    {{ dropzone.config(custom_options="success: function(file, response){console.log(response);}") }}
+    <br> {{response}} <br> {{content}}
 </body>
 
 </html>
