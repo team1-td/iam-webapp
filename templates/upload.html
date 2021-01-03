@@ -27,7 +27,7 @@
             acceptedFiles: ".jpeg,.jpg,.png,.gif",
 
             success: function(file, response) {
-
+                console.log("result 1:", result);
                 if (response != 0) {
 
                     var anchorEl = document.createElement('a');
@@ -39,6 +39,7 @@
                     anchorEl.innerHTML = "<br>Test";
 
                     file.previewTemplate.appendChild(anchorEl);
+                    console.log("result 2", result);
 
                 }
 
