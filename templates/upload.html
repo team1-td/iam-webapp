@@ -65,7 +65,7 @@
                     const result = response.image_ia
                     let resultEl = document.createElement('h3');
                     resultEl.innerHTML = "<br> " + result;
-
+                    resultEl.classList.add("result");
                     file.previewTemplate.appendChild(resultEl);
                     // console.log("result 2", name);
                     console.log("result 3", result);
