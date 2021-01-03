@@ -87,12 +87,12 @@ def upload():
     # content, status_code = jsonify(result), 200
     # headers = {'Access-Control-Allow-Origin': '*'}
     # return content, status_code, headers
-    if request.method == 'POST':
+    if request.method == 'post':
        query = request.form['query']
+       response = MyService.retrieve_response(query)
        content, status_code = jsonify(result), 200
        headers = {'Access-Control-Allow-Origin': '*'}
-       response = MyService.retrieve_response(query)
-    return render_template("upload.html", value=response, content, status_code, headers)
+    return render_template("upload.html", content, status_code, headers, value=response)
 
 
 if __name__ == '__main__':
