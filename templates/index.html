@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--CARICAMENTO GOOGLE FONTS POPPINS E PERMANENTMARKER-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <title>Iam</title>
+</head>
+
+<body>
+    <!--CARICAMENTO LOGO-->
+    <div class="logo">
+        <img src= "{{ url_for('static', filename='assets/images/logo.png') }}" alt="logo">
+    </div>
+    <!--CARICAMENTO TESTO NOME APP IAM-->
+    <div class="app_name">
+        <p class="appname"> I AM </p>
+    </div>
+    <!--FORM DI INSERIMENTO USERNAME E PASSWORD-->
+    <div container class="data_insert">
+        <form action="{{ url_for('home') }}" method="POST">
+            <label for="username">Username</label><br>
+            <input type="email" id="username" name="email" class="inputfield_style"><br><br>
+            <label for="password">Password</label><br>
+            <input type="password" id="password" name="password" class="inputfield_style">
+            <i class="far fa-eye" id="togglePassword"></i>
+            <input type="submit" alt="button to go on load page" value="LOGIN" lass="btn">
+        </form>
+        <!-- <a href="./load.html" ><button c></button></a> -->
+    </div>
+    <!---->
+    <script src="{{ url_for('static', filename='assets/JS/app.js') }}"></script>
+
+    <!--BOTTONI PER LA SECONDA PAGINA
+    <button class="btn btn__add__image">Add image</button>
+    <button class="btn btn__process">PROCESS</button>-->
+
+</body>
+
+</html>
