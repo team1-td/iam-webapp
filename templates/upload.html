@@ -8,10 +8,11 @@
 </head>
 
 <body>
-    {{ dropzone.create('/upload') }}
-    <button id="upload">Upload</button> {{ dropzone.load_js() }} {{ dropzone.config() }}
-
-    <h1>{{ value }}</h1>
+    <form action="" method="POST">
+        {{ dropzone.create('/upload') }}
+        <button id="upload">Upload</button> {{ dropzone.load_js() }} {{ dropzone.config() }}
+    </form>
+    <h1>{{ content }}</h1>
 </body>
 
 </html>

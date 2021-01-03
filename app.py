@@ -83,12 +83,10 @@ def upload():
             # invalid format
             result[image_name] = 'INVALID FORMAT'
 
-    # RESPONSE
-    # content, status_code = jsonify(result), 200
-    # headers = {'Access-Control-Allow-Origin': '*'}
-    # return content, status_code, headers
-    return jsonify(result=value);
-
+    RESPONSE
+    content, status_code = jsonify(result), 200
+    headers = {'Access-Control-Allow-Origin': '*'}
+    return content, status_code, headers
 
 if __name__ == '__main__':
     app.run(debug=True)
