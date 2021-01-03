@@ -32,18 +32,18 @@
 
                     const responseResult = JSON.stringify(response);
                     const name = responseResult[10];
-                    // const result = response[property];
+                    const result = responseResult.split(':').pop().split('"')[0];;
                     var anchorEl = document.createElement('a');
 
                     anchorEl.setAttribute('href', name);
 
                     anchorEl.setAttribute('target', '_blank');
 
-                    anchorEl.innerHTML = "<br>Test";
+                    anchorEl.innerHTML = "<br>Test " + result;
 
                     file.previewTemplate.appendChild(anchorEl);
                     console.log("result 2", name);
-                    // console.log("result 3", result);
+                    console.log("result 3", result);
                     console.log("result 4", responseResult);
                 }
 
