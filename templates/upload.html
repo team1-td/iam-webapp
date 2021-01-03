@@ -30,8 +30,8 @@
                 console.log("result 1:", response);
                 if (response != 0) {
 
-                    // const responseResult = JSON.stringify(response);
-                    const name = result.split('').pop().split(':')[0];;
+                    const responseResult = JSON.stringify(response);
+                    const name = responseResult.split('').pop().split(':')[0];;
                     const result = response[property];
                     var anchorEl = document.createElement('a');
 
@@ -44,7 +44,7 @@
                     file.previewTemplate.appendChild(anchorEl);
                     console.log("result 2", name);
                     console.log("result 3", result);
-                    // console.log("result 4", responseResult);
+                    console.log("result 4", responseResult);
                 }
 
             }
