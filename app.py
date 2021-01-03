@@ -65,31 +65,29 @@ def upload():
     if not os.path.isdir(user_images_path):
         os.mkdir(user_images_path)
 
-    result = {
-        fileName: "",
-        resultIA: ""
-    }
+    result = {}
 
     for key, f in request.files.items():
         if key.startswith('file'):
             f.save(os.path.join(app.config['UPLOADED_PATH'], f.filename))
 
         my_image_path = os.path.join(app.config['UPLOADED_PATH'], f.filename)
-        result.fileName = f.filename
+        image_name = f.filename
 
         image = Image(my_image_path)
         if image.is_image_format_valid():
             # image processing
             image.classify_image()
-            result.resultIA = image.classification
+            result[image_name] = image.classification
         else:
             # invalid format
-            result.fileName = 'INVALID FORMAT'
+            result[image_name] = 'INVALID FORMAT'
 
     # RESPONSE
     content, status_code = jsonify(result), 200
     headers = {'Access-Control-Allow-Origin': '*'}
     return content, status_code, headers
+
 
 if __name__ == '__main__':
     app.run(debug=True)
