@@ -62,7 +62,6 @@ def logout():
 def upload():
     user_images_path = os.path.join(app_root, 'user_images')
 
-    if request.method == 'POST':
     if not os.path.isdir(user_images_path):
         os.mkdir(user_images_path)
 
@@ -88,6 +87,7 @@ def upload():
     content, status_code = jsonify(result), 200
     headers = {'Access-Control-Allow-Origin': '*'}
     return content, status_code, headers
+
 
 if __name__ == '__main__':
     app.run(debug=True)
