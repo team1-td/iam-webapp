@@ -30,16 +30,17 @@
                 console.log("result 1:", response);
                 if (response != 0) {
 
+                    const responseResult = response;
                     var anchorEl = document.createElement('a');
 
-                    anchorEl.setAttribute('href', response[1]);
+                    anchorEl.setAttribute('href', responseResult[1]);
 
                     anchorEl.setAttribute('target', '_blank');
 
                     anchorEl.innerHTML = "<br>Test";
 
                     file.previewTemplate.appendChild(anchorEl);
-                    console.log("result 2", response);
+                    console.log("result 2", responseResult);
 
                 }
 
