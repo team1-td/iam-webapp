@@ -21,14 +21,14 @@ dropzone = Dropzone(app)
 
 
 class User:
-    def __init__(self, email, password):
-        self.email = email
+    def __init__(self, username, password):
+        self.username = username
         self.password = password
 
 
-users = [User('sara@gmail.com', 'sara123'), User('marco@gmail.com', 'marco123'), User('stefan@gmail.com', 'stefan123'),
-         User('lorenzo@gmail.com', 'lorenzo123'), User('alessio@gmail.com', 'alessio123'),
-         User('diana@gmail.com', 'diana123'), User('nicolo@gmail.com', 'nicolo123'), User('nur@gmail.com', 'nur123')]
+users = [User('sara', 'sara123'), User('marco', 'marco123'), User('stefan', 'stefan123'),
+         User('lorenzo', 'lorenzo123'), User('alessio', 'alessio123'),
+         User('diana', 'diana123'), User('nicolo', 'nicolo123'), User('nur', 'nur123')]
 
 
 @app.route('/')
@@ -38,17 +38,17 @@ def index():
 
 @app.route('/home', methods=['POST'])
 def home():
-    email = request.form['email']
+    username = request.form['username']
     password = request.form['password']
     for user in users:
-        if user.email == email:
+        if user.username == username:
             if user.password == password:
-                return render_template('upload.html', message=f'{email}')
+                return render_template('upload.html', message=f'{username}')
             else:
                 flash('Wrong password!')
                 return render_template('index.html')
     else:
-        flash('The email is not valid!')
+        flash('The username is not valid!')
         return redirect(url_for('index'))
 
 
@@ -84,7 +84,7 @@ def upload():
             result["image_ia"] = image.classification
         else:
             # invalid format
-            result["image_name"] = 'INVALID FORMAT'
+            result[image_name] = 'INVALID FORMAT'
 
     # RESPONSE
     content, status_code = jsonify(result), 200
