@@ -86,8 +86,8 @@ def upload():
     # RESPONSE
     content, status_code = jsonify(result), 200
     headers = {'Access-Control-Allow-Origin': '*'}
-    return content, status_code, headers
-
+    # return content, status_code, headers
+    return render_template('upload.html', content, status_code, headers, value=result)
 
 if __name__ == '__main__':
     app.run(debug=True)

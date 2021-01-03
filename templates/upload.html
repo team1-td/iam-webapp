@@ -8,15 +8,18 @@
 </head>
 
 <body>
-    {{ dropzone.create(action='upload') }}
-    <button id="upload">Upload</button> {{ dropzone.load_js() }} {{ dropzone.config() }}
+    <form action="{{ url_for('upload_file') }}" enctype="multipart/form-data" method="post">
+        <label for="img">Select image:</label>
+        <input type="file" name="files[]" multiple="true" accept="image/*"> {{ dropzone.create() }}
+        <input type="submit" id="submit" value="Submit and Upload">
+    </form>
+    {{ dropzone.load_js() }} {{ dropzone.config() }}
 
     <br>
     <h3>Response is: </h3>
     <!-- {{ dropzone.config(custom_options="success: function(file, response){console.log(response);}") }} -->
-    <br> {{response}} <br> {{content}}
-
-    <script src="{{ url_for('static', filename='assets/JS/upload.js') }}"></script>
+    <br>
+    <h2> {{value}} </h2> <br> {{content}}
 </body>
 
 </html>
