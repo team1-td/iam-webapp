@@ -8,11 +8,9 @@
 </head>
 
 <body>
-    <form action="/upload" method="post" class="dropzone" id="myDropzone" enctype="multipart/form-data"></form>
-    <input type="submit" id="upload">
-    <button id="upload">Upload</button>
-    </form>
-    {{ dropzone.load_js() }} {{ dropzone.config() }}
+    {{ dropzone.create('/upload') }}
+    <button id="upload">Upload</button> {{ dropzone.load_js() }} {{ dropzone.config() }}
+
     <br>
     <h3>Response is: </h3>
     <br> {{value}}

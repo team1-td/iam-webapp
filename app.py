@@ -90,7 +90,7 @@ def upload():
     if request.method == 'POST':
        query = request.form['query']
        response = MyService.retrieve_response(query)
-    return render_template("upload.html", value=result)
+    return render_template("upload.html", value=response)
 
 
 if __name__ == '__main__':
