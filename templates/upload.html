@@ -33,8 +33,8 @@
                 if (response != 0) {
 
                     // const responseResult = JSON.stringify(response[1]);
-                    const name = response.split('"').pop().split('"')[0];;
-                    const result = response[2];
+                    const name = response.split('').pop().split(':')[0];;
+                    const result = response.split('"').pop().split('"')[0];;
                     var anchorEl = document.createElement('a');
 
                     anchorEl.setAttribute('href', name);
