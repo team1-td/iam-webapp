@@ -30,9 +30,9 @@
                 console.log("result 1:", response);
                 if (response != 0) {
 
-                    const responseResult = JSON.stringify(response);
-                    const name = responseResult[10];
-                    const result = responseResult.split(':').pop().split('"')[0];;
+                    const responseResult = response;
+                    const name = result.image_result
+                    const result = result.split(':').pop().split('"')[0];;
                     var anchorEl = document.createElement('a');
 
                     anchorEl.setAttribute('href', name);
