@@ -58,7 +58,7 @@ def logout():
     return redirect(url_for('index'))
 
 
-@app.route('/upload', methods=['POST'])
+@app.route('/upload', methods=['post'])
 def upload():
     user_images_path = os.path.join(app_root, 'user_images')
 
@@ -83,10 +83,12 @@ def upload():
             # invalid format
             result[image_name] = 'INVALID FORMAT'
 
-    RESPONSE
-    content, status_code = jsonify(result), 200
-    headers = {'Access-Control-Allow-Origin': '*'}
-    return content, status_code, headers
+    # RESPONSE
+    # content, status_code = jsonify(result), 200
+    # headers = {'Access-Control-Allow-Origin': '*'}
+    # return content, status_code, headers
+    return render_template("upload.html", value=result)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
