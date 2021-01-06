@@ -1,7 +1,7 @@
 const togglePassword = document.querySelector('#togglePassword');
 const password = document.querySelector('#password');
 
-togglePassword.addEventListener('click', function(e){
+togglePassword.addEventListener('click', function(e) {
     //toggle the type attribute
     const type = password.getAttribute('type') == 'password' ? 'text' : 'password';
     password.setAttribute('type', type);
@@ -17,7 +17,7 @@ const credits = document.querySelector(".credits__background");
 const closeCredits = document.querySelector("#close__credits")
 console.log(creditsButton)
 
-function openCredits (){
+function openCredits() {
     if (credits.style.display === "block") {
         credits.style.display = "none"
     } else {
