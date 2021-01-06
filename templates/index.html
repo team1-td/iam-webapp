@@ -4,12 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Team 1: Abdu Mohammed Nur; Bernabei Diana; Boanini Sara; di Fede Stefan; Improda Marco; Muzzi Lorenzo; Spagnolini Alessio; Vitelli Nicolò">
+    <meta name="copyright" content="Team 1">
+    <meta name="description" content="Upload up to 10 image per time and get a basic description for each one.">
+    <meta name="keywords" content="I am, image, upload, recognition, jpeg, png">
+    <meta property="og:type" content="Landing Page">
+    <meta property="og:title" content="IAm-webapp">
+    <meta property="og:site_name" content="image recognizer">
+    <meta property="og:description" content="A webapp where you can upload up to 10 image per time and get a basic description for each one.">
+    <meta property="og:locale" content="English">
+    <meta property="og:url" content="https://peaceful-anchorage-04331.herokuapp.com/">
+    <link rel="icon" href="{{ url_for('static', filename='assets/css/style.css') }}" type="image/icon type">
     <!--CARICAMENTO GOOGLE FONTS POPPINS E PERMANENTMARKER-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-    <link href="{{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet">
+    <link href="/static/assets/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <title>Iam</title>
 </head>
@@ -17,7 +29,7 @@
 <body>
     <!--CARICAMENTO LOGO-->
     <div class="logo">
-        <img src="{{ url_for('static', filename='assets/images/logo.png') }}" alt="logo">
+        <img src= "{{ url_for('static', filename='assets/images/logo.png') }}" alt="logo">
     </div>
     <!--CARICAMENTO TESTO NOME APP IAM-->
     <div class="app_name">
@@ -26,15 +38,59 @@
     <!--FORM DI INSERIMENTO USERNAME E PASSWORD-->
     <div class="data_insert">
         <form action="{{ url_for('home') }}" method="POST">
-            <label for="username">Username</label><br>
-            <input type="text" id="username" name="username" class="inputfield_style"><br><br>
-            <label for="password">Password</label><br>
-            <input type="password" id="password" name="password" class="inputfield_style">
-            <i class="far fa-eye" id="togglePassword"></i>
-            <br>
-            <input type="submit" class="btn" alt="button to go on load page" value="LOGIN" lass="btn">
+            <p>
+                <label for="username">Username</label><br>
+                <input type="text" id="username" name="username" class="inputfield_style">
+            </p>
+            <p>
+                <label for="password">Password</label><br>
+                <input type="password" id="password" name="password" class="inputfield_style">
+                <i class="far fa-eye" id="togglePassword"></i>
+            </p>
+            <p>
+                <input type="submit" class="btn" alt="button to go on load page" value="LOGIN">
+            </p>
         </form>
     </div>
+
+    <!-- CREDITS -->
+    <div class="credits">CREDITS</div>
+        <div class="credits__background">
+            <img id="close__credits" src="/static/assets/images/close__credits.svg" alt="">
+            <div class="credits__container">
+                <div class="credits__list">
+                    <h3>Lato Front-End</h3>
+                    <div>Bernabei Diana
+                        <br><a class="git__link" href="https://github.com/dianaberna">https://github.com/dianaberna</a>
+                    </div>
+                    <div>di Fede Stefan
+                        <br><a class="git__link" href="https://github.com/stefandhub">https://github.com/stefandhub</a>
+                    </div>
+                    <div>Improda Marco
+                        <br><a class="git__link" href="https://github.com/marcoimproda">https://github.com/marcoimproda</a>
+                    </div>
+                    <div>Spagnolini Alessio
+                        <br><a class="git__link" href="https://github.com/Ishtraodd">https://github.com/Ishtraodd</a>
+                    </div>
+                </div>
+                <div class="credits__list credits__list__modifier">
+                    <h3>Lato Back-End</h3>
+                    <div>Abdu Mohammed Nur
+                        <br><a class="git__link" href="https://github.com/amnur">https://github.com/amnur</a>
+                    </div>
+                    <div>Boanini Sara,
+                        <span>Team Leader</span>
+                        <br><a class="git__link" href="https://github.com/orgs/team1-td/people/Elirien">https://github.com/orgs/team1-td/people/Elirien</a>
+                    </div>
+                    <div>Muzzi Lorenzo
+                        <br><a class="git__link" href="https://github.com/Indiana3">https://github.com/Indiana3</a>
+                    </div>
+                    <div>Vitelli Nicolò
+                        <br><a class="git__link" href="https://github.com/nicolovitelli">https://github.com/nicolovitelli</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     <script src="{{ url_for('static', filename='assets/JS/app.js') }}"></script>
 
     <!--BOTTONI PER LA SECONDA PAGINA
