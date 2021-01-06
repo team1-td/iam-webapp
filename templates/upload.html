@@ -69,7 +69,7 @@
                     responseResult = response;
                     let resultEl = document.createElement('h3');
                     for (let i = 0; i < responseResult.response.length; i++) {
-                        resultEl.innerHTML += "<br> " + responseResult.response[i].image_ia;
+                        resultEl.innerHTML = "<br> " + responseResult.response[i].image_ia;
                         resultEl.classList.add("result");
                         file.previewTemplate.appendChild(resultEl);
                     }
