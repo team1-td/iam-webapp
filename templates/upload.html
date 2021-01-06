@@ -54,7 +54,6 @@
         Dropzone.autoDiscover = false;
         let responseResult = "";
         let result = "";
-        let resultEl = document.createElement('h3');
 
 
         var myDropzone = new Dropzone(".dropzone", {
@@ -68,19 +67,15 @@
                 if (response != 0) {
 
                     responseResult = response;
-                    // let result = responseResult.response
-                    // let resultEl = document.createElement('h3');
-                    // resultEl.innerHTML = "<br> " + result;
-                    // resultEl.classList.add("result");
-                    // file.previewTemplate.appendChild(resultEl);
+                    let resultEl = document.createElement('h3');
+                    for (let i = 0; i < responseResult.response.length; i++) {
+                        resultEl.innerHTML += "<br> " + responseResult.response[i].image_ia;
+                        resultEl.classList.add("result");
+                        file.previewTemplate.appendChild(resultEl);
+                    }
                     // console.log("result 2", name);
                     // console.log("result 3", result);
                     console.log("result 4", responseResult);
-                }
-                for (let i = 0; i < responseResult.response.length; i++) {
-                    resultEl.innerHTML += "<br> " + responseResult.response[i].image_ia;
-                    resultEl.classList.add("result");
-                    file.previewTemplate.appendChild(resultEl);
                 }
             }
 
