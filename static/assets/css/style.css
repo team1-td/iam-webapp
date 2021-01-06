@@ -1,6 +1,6 @@
 .btn {
     text-align: center;
-    width: 70vw;
+    width: 250px;
     height: 43px;
     background-color: #66E26F;
     border-radius: 30px;
@@ -9,8 +9,7 @@
     font-weight: bold;
     border: none;
     color: #ffffff;
-    /*margin: 43px;*/
-    margin-top: 2em;
+    margin: 56px;
     cursor: pointer;
 }
 
@@ -41,7 +40,6 @@
 
 @media (min-width: 768px) {
     .btn {
-        width: 14vw;
         text-align: center;
     }
 }
@@ -55,6 +53,10 @@
     flex-wrap: nowrap;
     align-items: center;
     margin-top: 10vh;
+}
+
+.position__modifier {
+    margin-left: 12%;
 }
 
 

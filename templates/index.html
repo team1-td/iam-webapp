@@ -38,11 +38,11 @@
     <!--FORM DI INSERIMENTO USERNAME E PASSWORD-->
     <div class="data_insert">
         <form action="{{ url_for('home') }}" method="POST">
-            <p>
+            <p class="position__modifier">
                 <label for="username">Username</label><br>
                 <input type="text" id="username" name="username" class="inputfield_style">
             </p>
-            <p>
+            <p class="position__modifier">
                 <label for="password">Password</label><br>
                 <input type="password" id="password" name="password" class="inputfield_style">
                 <i class="far fa-eye" id="togglePassword"></i>
