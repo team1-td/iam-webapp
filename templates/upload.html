@@ -69,13 +69,12 @@
                     responseResult = response;
                     let resultEl = document.createElement('h3');
                     for (let i = 0; i < responseResult.response.length; i++) {
-                        result += "<br> " + responseResult.response[i].image_ia;
+                        resultEl.innerHTML += "<br> " + responseResult.response[i].image_ia;
+                        resultEl.classList.add("result");
+                        file.previewTemplate.appendChild(resultEl);
                     }
-                    resultEl.innerHTML += "<br> " + result;
-                    resultEl.classList.add("result");
-                    file.previewTemplate.appendChild(resultEl);
                     // console.log("result 2", name);
-                    console.log("result 3", result);
+                    // console.log("result 3", result);
                     console.log("result 4", responseResult);
                 }
             }
