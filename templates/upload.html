@@ -65,8 +65,8 @@
                 console.log("result 1:", response);
                 if (response != 0) {
 
-                    const responseResult = response;
-                    const result = response.image_ia
+                    const responseResult = response.response;
+                    const result = responseResult.response
                     let resultEl = document.createElement('h3');
                     resultEl.innerHTML = "<br> " + result;
                     resultEl.classList.add("result");
