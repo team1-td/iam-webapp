@@ -52,7 +52,7 @@
 
     <script type="text/javascript">
         Dropzone.autoDiscover = false;
-
+        let responseResult = "";
 
 
         var myDropzone = new Dropzone(".dropzone", {
@@ -65,15 +65,16 @@
                 console.log("result 1:", response);
                 if (response != 0) {
 
-                    const responseResult = response.response;
-                    const result = responseResult.response
+                    responseResult = response;
+                    let result = responseResult.response
                     let resultEl = document.createElement('h3');
                     resultEl.innerHTML = "<br> " + result;
                     resultEl.classList.add("result");
                     file.previewTemplate.appendChild(resultEl);
                     // console.log("result 2", name);
                     console.log("result 3", result);
-                    // console.log("result 4", responseResult);
+                    console.log("result 4", responseResult);
+                    return responseResult;
                 }
 
             }
