@@ -14,7 +14,7 @@
     <meta property="og:site_name" content="image recognizer">
     <meta property="og:description" content="A webapp where you can upload up to 10 image per time and get a basic description for each one.">
     <meta property="og:locale" content="English">
-    <meta property="og:url" content="https://peaceful-anchorage-04331.herokuapp.com/">
+    <meta property="og:url" content="https://iam-webapp.herokuapp.com/">
     <link rel="icon" href="{{ url_for('static', filename='assets/css/style.css') }}" type="image/icon type">
     <!--CARICAMENTO GOOGLE FONTS POPPINS E PERMANENTMARKER-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -29,7 +29,7 @@
 <body>
     <!--CARICAMENTO LOGO-->
     <div class="logo">
-        <img src= "{{ url_for('static', filename='assets/images/logo.png') }}" alt="logo">
+        <img src="{{ url_for('static', filename='assets/images/logo.png') }}" alt="logo">
     </div>
     <!--CARICAMENTO TESTO NOME APP IAM-->
     <div class="app_name">
@@ -55,42 +55,42 @@
 
     <!-- CREDITS -->
     <div class="credits">CREDITS</div>
-        <div class="credits__background">
-            <img id="close__credits" src="/static/assets/images/close__credits.svg" alt="">
-            <div class="credits__container">
-                <div class="credits__list">
-                    <h3>Lato Front-End</h3>
-                    <div>Bernabei Diana
-                        <br><a class="git__link" href="https://github.com/dianaberna">https://github.com/dianaberna</a>
-                    </div>
-                    <div>di Fede Stefan
-                        <br><a class="git__link" href="https://github.com/stefandhub">https://github.com/stefandhub</a>
-                    </div>
-                    <div>Improda Marco
-                        <br><a class="git__link" href="https://github.com/marcoimproda">https://github.com/marcoimproda</a>
-                    </div>
-                    <div>Spagnolini Alessio
-                        <br><a class="git__link" href="https://github.com/Ishtraodd">https://github.com/Ishtraodd</a>
-                    </div>
+    <div class="credits__background">
+        <img id="close__credits" src="/static/assets/images/close__credits.svg" alt="">
+        <div class="credits__container">
+            <div class="credits__list">
+                <h3>Lato Front-End</h3>
+                <div>Bernabei Diana
+                    <br><a class="git__link" href="https://github.com/dianaberna">https://github.com/dianaberna</a>
                 </div>
-                <div class="credits__list credits__list__modifier">
-                    <h3>Lato Back-End</h3>
-                    <div>Abdu Mohammed Nur
-                        <br><a class="git__link" href="https://github.com/amnur">https://github.com/amnur</a>
-                    </div>
-                    <div>Boanini Sara,
-                        <span>Team Leader</span>
-                        <br><a class="git__link" href="https://github.com/orgs/team1-td/people/Elirien">https://github.com/orgs/team1-td/people/Elirien</a>
-                    </div>
-                    <div>Muzzi Lorenzo
-                        <br><a class="git__link" href="https://github.com/Indiana3">https://github.com/Indiana3</a>
-                    </div>
-                    <div>Vitelli Nicolò
-                        <br><a class="git__link" href="https://github.com/nicolovitelli">https://github.com/nicolovitelli</a>
-                    </div>
+                <div>di Fede Stefan
+                    <br><a class="git__link" href="https://github.com/stefandhub">https://github.com/stefandhub</a>
+                </div>
+                <div>Improda Marco
+                    <br><a class="git__link" href="https://github.com/marcoimproda">https://github.com/marcoimproda</a>
+                </div>
+                <div>Spagnolini Alessio
+                    <br><a class="git__link" href="https://github.com/Ishtraodd">https://github.com/Ishtraodd</a>
+                </div>
+            </div>
+            <div class="credits__list credits__list__modifier">
+                <h3>Lato Back-End</h3>
+                <div>Abdu Mohammed Nur
+                    <br><a class="git__link" href="https://github.com/amnur">https://github.com/amnur</a>
+                </div>
+                <div>Boanini Sara,
+                    <span>Team Leader</span>
+                    <br><a class="git__link" href="https://github.com/orgs/team1-td/people/Elirien">https://github.com/orgs/team1-td/people/Elirien</a>
+                </div>
+                <div>Muzzi Lorenzo
+                    <br><a class="git__link" href="https://github.com/Indiana3">https://github.com/Indiana3</a>
+                </div>
+                <div>Vitelli Nicolò
+                    <br><a class="git__link" href="https://github.com/nicolovitelli">https://github.com/nicolovitelli</a>
                 </div>
             </div>
         </div>
+    </div>
     <script src="{{ url_for('static', filename='assets/JS/app.js') }}"></script>
 
     <!--BOTTONI PER LA SECONDA PAGINA
