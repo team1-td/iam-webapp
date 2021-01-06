@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, request, jsonify, url_for, flash, redirect
 import os
 from image import Image
@@ -66,16 +67,16 @@ def upload():
         os.mkdir(user_images_path)
 
     all_results = []
-​
+
     result = {}
-​
+
     for key, f in request.files.items():
         if key.startswith('file'):
             f.save(os.path.join(app.config['UPLOADED_PATH'], f.filename))
-​
+
         my_image_path = os.path.join(app.config['UPLOADED_PATH'], f.filename)
         image_name = f.filename
-​
+
         image = Image(my_image_path)
         if image.is_image_format_valid():
             # image processing
@@ -86,12 +87,17 @@ def upload():
             # invalid format
             result["image_name"] = image_name
             result["image_ia"] = 'INVALID FORMAT'
-​
+
         all_results.append(result)
         result = {}
-​
+
     my_json = {}
     my_json["response"] = all_results
+
+    # RESPONSE
+    content, status_code = jsonify(my_json), 200
+    headers = {'Access-Control-Allow-Origin': '*'}
+    return content, status_code, headers
 
 
 if __name__ == '__main__':
