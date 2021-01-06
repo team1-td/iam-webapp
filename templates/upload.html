@@ -71,9 +71,11 @@
                     responseFile = file;
                     let resultEl = document.createElement('h3');
                     for (let i = 0; i < responseResult.response.length; i++) {
-                        resultEl.innerHTML += "<br> " + responseResult.response[i].image_ia;
-                        resultEl.classList.add("result");
-                        file.previewTemplate.appendChild(resultEl);
+                        if (responseFile.upload.filename == responseResult.response[i].image_name) {
+                            resultEl.innerHTML = "<br> " + responseResult.response[i].image_ia;
+                            resultEl.classList.add("result");
+                            file.previewTemplate.appendChild(resultEl);
+                        }
                     }
                     // console.log("result 2", name);
                     // console.log("result 3", result);
