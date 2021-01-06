@@ -53,6 +53,7 @@
     <script type="text/javascript">
         Dropzone.autoDiscover = false;
         let responseResult = "";
+        let responseFile = "";
         let result = "";
 
 
@@ -67,6 +68,7 @@
                 if (response != 0) {
 
                     responseResult = response;
+                    responseFile = file;
                     let resultEl = document.createElement('h3');
                     for (let i = 0; i < responseResult.response.length; i++) {
                         resultEl.innerHTML += "<br> " + responseResult.response[i].image_ia;
@@ -76,6 +78,7 @@
                     // console.log("result 2", name);
                     // console.log("result 3", result);
                     console.log("result 4", responseResult);
+                    console.log("result 5", responseFile);
                 }
             }
 
