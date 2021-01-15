@@ -1,7 +1,8 @@
 # Iam-webapp
 
 This is a project, inserted in our study path, made to learn teamworking and Agile methods. 
-Warning! This repo represents the first sprint of a more complex project, so I advise you to follow the development of the project in the repo of the second sprint
+
+**Warning!** This repo represents the first sprint of a more complex project, so I advise you to follow the development of the project in the repo of the second sprint
 
 Members of the team
 -
